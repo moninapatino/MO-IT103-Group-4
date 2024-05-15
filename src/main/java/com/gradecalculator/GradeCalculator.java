@@ -65,9 +65,9 @@ public class GradeCalculator extends JFrame {
            public void actionPerformed(ActionEvent e) {
                if (e.getActionCommand().equals("Calculate")) {
             try {
-                double milestone1Label = Double.parseDouble(milestone1Field.getText());
-                double milestone2Label = Double.parseDouble(milestone2Field.getText());
-                double terminalLabel = Double.parseDouble(terminalField.getText());
+                int milestone1Label = Integer.parseInt(milestone1Field.getText());
+                int milestone2Label = Integer.parseInt(milestone2Field.getText());
+                int terminalLabel = Integer.parseInt(terminalField.getText());
                 
                 if (milestone1Label > 25 || milestone1Label < 1 ||
                         milestone2Label > 40 || milestone2Label < 1 ||
@@ -75,9 +75,8 @@ public class GradeCalculator extends JFrame {
                         throw new NumberFormatException();
                 }
         
-                double result = (milestone1Label * 0.25)  + (milestone2Label * 0.40) + (terminalLabel * 0.35);
-                String resultF = Double.toString(result);
-                resultF = new DecimalFormat("#.0#").format(result);             
+                int result = milestone1Label  + milestone2Label+ terminalLabel ;
+                String resultF = Integer.toString(result);
                 resultField.setText(resultF);
                 
                 
